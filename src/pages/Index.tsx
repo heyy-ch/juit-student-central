@@ -12,6 +12,8 @@ import {
   UserSearch 
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import juitLogo from "@/assets/juit-logo.jpg";
+import juitCampusBg from "@/assets/juit-campus-bg.jpg";
 
 const dashboardCards = [
   {
@@ -83,11 +85,24 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
-      <div className="bg-gradient-hero text-white py-16 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Jaypee University Student Hub
-          </h1>
+      <div 
+        className="relative bg-gradient-hero text-white py-16 px-4 bg-cover bg-center bg-blend-overlay"
+        style={{
+          backgroundImage: `url(${juitCampusBg})`,
+          backgroundColor: 'rgba(139, 69, 240, 0.8)' // Overlay to ensure text readability
+        }}
+      >
+        <div className="container mx-auto text-center relative z-10">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <img 
+              src={juitLogo} 
+              alt="JUIT Logo" 
+              className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg p-2"
+            />
+            <h1 className="text-4xl md:text-6xl font-bold">
+              Jaypee University Student Hub
+            </h1>
+          </div>
           <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
             Your one-stop portal for all campus information
           </p>
